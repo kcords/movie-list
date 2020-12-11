@@ -9,12 +9,22 @@ const movies = [
   {title: 'Ex Machina'},
 ];
 
-const App = (props) => (
-  <div className="movie-list">
-    <span>MovieList</span>
-    <MovieList />
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {movies}
+  }
 
-  </div>
-);
+  render() {
+    return (
+      <div className="app-component">
+        <header>MovieList</header>
+        <MovieList movies={this.state.movies} />
+
+      </div>
+    );
+  }
+
+}
 
 export default App;

@@ -1,8 +1,8 @@
 import React from 'react';
 
 const MovieListItem = (props) => (
-  <div>
-    Item
+  <div className="movie-list-item">
+    {props.movie.title}
   </div>
 )
 
