@@ -3,7 +3,7 @@ import axios from 'axios';
 const TMDB = require('../../../private/tmdb.js');
 
 const AddMovie = (props) => {
-  const { newMovie, movies } = props;
+  const { newMovie, movies, setAddMode } = props;
   const [ enteredMovie, setEnteredMovie ] = useState('');
   const IMG_URL_PREFIX = 'https://image.tmdb.org/t/p/w500/';
   const [ dbMovies, setDbMovies ] = useState([]);
@@ -38,12 +38,33 @@ const AddMovie = (props) => {
         >
           Search
         </button>
+      <button onClick={ e => {
+        e.preventDefault();
+        setAddMode(false);
+      }}>
+        Back to list
+      </button>
       </form>
-      {dbMovies.map( movie => (
+      {dbMovies.map( (movie, ndx) => (
         <div key={movie.id} className="movie-list-item" >
-          <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} className="movie-poster" />
-          <span className="movie-title">{movie.title}</span>
-          <button className="watched-btn">Add to movie list</button>
+          <img
+            src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`}     className="movie-poster"
+          />
+          <span className="movie-title">
+            {movie.title}
+          </span>
+          <button
+            className="watched-btn"
+            onClick={ e => {
+              e.preventDefault();
+              newMovie(movie);
+              const movieList = dbMovies;
+              movieList.splice(ndx, 1);
+              setDbMovies(movieList);
+            }}
+          >
+            Add to movie list
+          </button>
         </div>
       ))}
     </div>

@@ -15,6 +15,7 @@ const MovieListItem = (props) => {
     >
       <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} className="movie-poster" />
       <span className="movie-title">{movie.title}</span>
+      {/* <span>{`(${movie.release_date.split('-')[0]})`}</span> */}
       <button
         className="watched-btn"
         onClick={ e => toggleWatched(index) }

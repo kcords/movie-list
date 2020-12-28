@@ -4,7 +4,8 @@ const FilterBar = (props) => {
   const {
     updateSearchFilter,
     watchStateFilter,
-    setWatchStateFilter
+    setWatchStateFilter,
+    setAddMode
   } = props;
 
   return(
@@ -51,6 +52,12 @@ const FilterBar = (props) => {
           onChange={ (e) => setWatchStateFilter(e.target.value) }
         />
       </label>
+      <button onClick={ e => {
+        e.preventDefault();
+        setAddMode(true);
+      }}>
+        Add new movie
+      </button>
     </form>
   )
 }

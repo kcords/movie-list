@@ -3,7 +3,7 @@ import MovieListItem from './MovieListItem.jsx';
 import FilterBar from './FilterBar.jsx';
 
 const MovieList = (props) => {
-  const { movies, toggleWatched } = props;
+  const { movies, toggleWatched, setAddMode } = props;
   const [ filteredMovies, setFilteredMovies ] = useState(filteredMovies);
   const [ searchFilter, setSearchFilter ] = useState('');
   const [ watchStateFilter, setWatchStateFilter ] = useState('all');
@@ -28,6 +28,7 @@ const MovieList = (props) => {
         updateSearchFilter={updateSearchFilter}
         watchStateFilter={watchStateFilter}
         setWatchStateFilter={setWatchStateFilter}
+        setAddMode={setAddMode}
       />
 
       {
