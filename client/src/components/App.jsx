@@ -17,14 +17,14 @@ const App = () => {
 
   const newMovie = (mov) => {
     const movieList = [...movies, mov];
-    console.log('new movie list:', movieList)
+    // console.log('new movie list:', movieList)
     setMovies(movieList);
   }
 
   const toggleWatched = (ndx) => {
     const movieList = [...movies];
     const toggleMovie = {...movieList[ndx], watched: !movieList[ndx].watched};
-    console.log(toggleMovie)
+    // console.log(toggleMovie)
     movieList.splice(ndx, 1, toggleMovie)
     setMovies(movieList);
   }

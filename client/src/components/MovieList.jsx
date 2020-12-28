@@ -15,7 +15,7 @@ const MovieList = (props) => {
   // }, [searchFilter])
 
   useEffect( () => {
-    console.log(props.movies, movies)
+    // console.log(props.movies, movies)
   }, [toggleWatched])
 
   const updateSearchFilter = (string) => {
@@ -33,7 +33,7 @@ const MovieList = (props) => {
       {
         movies.length
           ? movies.map( (movie, index) => (
-            movie.title.includes(searchFilter)
+            movie.title.toLowerCase().includes(searchFilter.toLowerCase())
             && (watchStateFilter === 'all'
               || movie.watched && watchStateFilter === 'watched'
               || !movie.watched && watchStateFilter === 'unwatched')

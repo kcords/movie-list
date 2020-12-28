@@ -13,7 +13,7 @@ const MovieListItem = (props) => {
       className="movie-list-item"
       onClick={ e => setDisplayInfo(!displayInfo) }
     >
-      <img src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`} className="movie-poster" />
+      <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} className="movie-poster" />
       <span className="movie-title">{movie.title}</span>
       <button
         className="watched-btn"

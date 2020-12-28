@@ -8,7 +8,7 @@ const FilterBar = (props) => {
   } = props;
 
   return(
-    <form autoComplete="on" >
+    <form autoComplete="off" >
       <label>
         <input
           type="text"

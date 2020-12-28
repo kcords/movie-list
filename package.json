@@ -25,6 +25,7 @@
     "webpack-cli": "^3.3.9"
   },
   "dependencies": {
+    "axios": "^0.21.1",
     "nodemon": "^1.19.3"
   }
 }
