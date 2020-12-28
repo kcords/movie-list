@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+const TMDB = require('../../../private/tmdb.js');
 
 const AddMovie = (props) => {
   const { newMovie, movies } = props;
   const [ enteredMovie, setEnteredMovie ] = useState('');
+  const IMG_URL_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
   return (
     <form>
