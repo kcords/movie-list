@@ -52,10 +52,14 @@ const FilterBar = (props) => {
           onChange={ (e) => setWatchStateFilter(e.target.value) }
         />
       </label>
-      <button onClick={ e => {
-        e.preventDefault();
-        setAddMode(true);
-      }}>
+      <button
+        className="add-btn"
+        onClick={ e => {
+          e.preventDefault();
+          setAddMode(true);
+
+        }}
+      >
         Add new movie
       </button>
     </form>

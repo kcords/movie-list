@@ -29,6 +29,7 @@ const MovieList = (props) => {
         watchStateFilter={watchStateFilter}
         setWatchStateFilter={setWatchStateFilter}
         setAddMode={setAddMode}
+        className="sticky"
       />
 
       {

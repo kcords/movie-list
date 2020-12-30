@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import InfoCard from './InfoCard.jsx'
 const TMDB = require('../../../private/tmdb.js');
 const IMG_URL_PREFIX = 'https://image.tmdb.org/t/p/w500/';
 
 const MovieListItem = (props) => {
   const { movie, index, toggleWatched } = props;
-  const [ watchedStatus, setWatchedStatus ] = useState(movie.watched ? 'Watched' : 'Unwatched')
   const [ displayInfo, setDisplayInfo ] = useState(false);
 
   return (
@@ -18,9 +17,12 @@ const MovieListItem = (props) => {
       {/* <span>{`(${movie.release_date.split('-')[0]})`}</span> */}
       <button
         className="watched-btn"
-        onClick={ e => toggleWatched(index) }
+        onClick={ e => {
+          e.preventDefault();
+          toggleWatched(index);
+        }}
       >
-        {watchedStatus}
+        {movie.watched ? 'Watched' : 'Unwatched'}
       </button>
       { displayInfo ? <InfoCard movie={movie} className="info-card" /> : null }
 

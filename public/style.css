@@ -97,8 +97,12 @@ button .search-input {
   margin-left: 12px;
 }
 
+.add-btn {
+  float: right;
+}
+
 .movie-list {
-  max-height: 10%;
+  /* max-height: 10%; */
   overflow: auto;
 }
 

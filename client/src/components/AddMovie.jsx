@@ -38,10 +38,13 @@ const AddMovie = (props) => {
         >
           Search
         </button>
-      <button onClick={ e => {
-        e.preventDefault();
-        setAddMode(false);
-      }}>
+      <button
+        className="add-btn"
+        onClick={ e => {
+          e.preventDefault();
+          setAddMode(false);
+        }}
+      >
         Back to list
       </button>
       </form>
