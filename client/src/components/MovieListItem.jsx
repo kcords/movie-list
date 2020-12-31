@@ -10,7 +10,6 @@ const MovieListItem = (props) => {
   return (
     <div
       className="movie-list-item"
-      onClick={ e => setDisplayInfo(!displayInfo) }
     >
       <img src={`https://image.tmdb.org/t/p/w200/${movie.poster_path}`} className="movie-poster" />
       <span className="movie-title">{movie.title}</span>
@@ -19,12 +18,15 @@ const MovieListItem = (props) => {
         className="watched-btn"
         onClick={ e => {
           e.preventDefault();
-          toggleWatched(index);
+          toggleWatched(movie);
         }}
       >
         {movie.watched ? 'Watched' : 'Unwatched'}
       </button>
       { displayInfo ? <InfoCard movie={movie} className="info-card" /> : null }
+      { displayInfo
+        ? <button onClick={ e => setDisplayInfo(!displayInfo) }>Close</button>
+        : <span onClick={ e => setDisplayInfo(!displayInfo) }>More...</span> }
 
     </div>
   )

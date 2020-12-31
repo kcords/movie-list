@@ -21,26 +21,25 @@ const App = () => {
   }
 
   const newMovie = (mov) => {
-    console.log(mov)
-    axios.post('api/movies', mov)
-      .then( response => {
-        getMovies();
-      })
+    const newMov = {...mov, watched: false};
+    axios.post('api/movies', newMov)
+      .then( () => getMovies() )
   }
 
-  // const newMovie = (mov) => {
-  //   const newMov = {...mov, watched: false}
-  //   const movieList = [...movies, newMov];
-  //   // console.log('new movie list:', movieList)
-  //   setMovies(movieList);
-  // }
+  const updateMovie = (mov) => {
+    axios.patch('api/movies', mov)
+      .then( () => getMovies() )
+  }
 
-  const toggleWatched = (ndx) => {
-    const movieList = [...movies];
-    const toggleMovie = {...movieList[ndx], watched: !movieList[ndx].watched};
-    // console.log(toggleMovie)
-    movieList.splice(ndx, 1, toggleMovie)
-    setMovies(movieList);
+  const toggleWatched = (mov) => {
+    const update = {id: mov.id, watched: !mov.watched}
+    console.log(update)
+    updateMovie(update);
+    // const movieList = [...movies];
+    // const toggleMovie = {...movieList[ndx], watched: !movieList[ndx].watched};
+    // // console.log(toggleMovie)
+    // movieList.splice(ndx, 1, toggleMovie)
+    // setMovies(movieList);
   }
 
   return (

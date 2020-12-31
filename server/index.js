@@ -39,6 +39,14 @@ app.post('/api/movies', (req, res) => {
   })
 })
 
+app.patch('/api/movies', (req, res) => {
+  db.update( req.body, (error, data) => {
+    error
+      ? res.send('Update not successful.').status(500)
+      : res.send(`${req.body.title} was updated successfully.`).status(200)
+  })
+})
+
 // db.mongo( client => {
 //   console.log(client);
   app.listen(PORT, () => {

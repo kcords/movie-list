@@ -19,9 +19,19 @@ const getAll = (callback) => {
 }
 
 const create = (data, callback) => {
-  const { title, overview, poster_path, release_date, vote_average } = data;
-  const query = 'INSERT INTO movies (title, overview, poster_path, release_date, vote_average) VALUES (?, ?, ?, ?, ?)';
-  connection.query(query, [title, overview, poster_path, release_date, vote_average], (error, results) => {
+  const { title, overview, poster_path, release_date, vote_average, watched } = data;
+  const query = 'INSERT INTO movies (title, overview, poster_path, release_date, vote_average, watched) VALUES (?, ?, ?, ?, ?, ?)';
+  connection.query(query, [title, overview, poster_path, release_date, vote_average, watched], (error, results) => {
+    error ? callback(error) : callback(null, results);
+  })
+}
+
+const update = (data, callback) => {
+  let { id, watched } = data;
+  // watched = Number(watched);
+  console.log(id, watched)
+  const query = 'UPDATE movies SET watched = ? WHERE id = ?';
+  connection.query(query, [watched, id], (error, results) => {
     error ? callback(error) : callback(null, results);
   })
 }
@@ -30,7 +40,8 @@ const create = (data, callback) => {
 
 module.exports = {
   getAll: getAll,
-  create: create
+  create: create,
+  update: update
 }
 
 

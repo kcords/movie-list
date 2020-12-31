@@ -47,6 +47,7 @@ const AddMovie = (props) => {
       >
         Back to list
       </button>
+
       </form>
       {dbMovies.map( (movie, ndx) => (
         <div key={movie.id} className="movie-list-item" >
