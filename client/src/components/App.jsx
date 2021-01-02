@@ -33,13 +33,7 @@ const App = () => {
 
   const toggleWatched = (mov) => {
     const update = {id: mov.id, watched: !mov.watched}
-    console.log(update)
     updateMovie(update);
-    // const movieList = [...movies];
-    // const toggleMovie = {...movieList[ndx], watched: !movieList[ndx].watched};
-    // // console.log(toggleMovie)
-    // movieList.splice(ndx, 1, toggleMovie)
-    // setMovies(movieList);
   }
 
   return (

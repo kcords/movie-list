@@ -5,11 +5,17 @@ const InfoCard = (props) => {
 
 
   return (
-    <div>
-      <p>Released: {`${movie.release_date.split('-')[1]}/${movie.release_date.split('-')[2]}/${movie.release_date.split('-')[0]}`}</p>
-      <p>Description: {movie.overview}</p>
-      <p>Rating: {movie.vote_average}</p>
-    </div>
+    <table>
+      <tr>
+        <td>Released:</td><td>{`${movie.release_date.split('-')[1]}/${movie.release_date.split('-')[2]}/${movie.release_date.split('-')[0]}`}</td>
+      </tr>
+      <tr>
+        <td>Description:</td><td>{movie.overview}</td>
+      </tr>
+      <tr>
+        <td>Rating:</td><td>{movie.vote_average}</td>
+      </tr>
+    </table>
   )
 }
 

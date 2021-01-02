@@ -1,5 +1,5 @@
 /*
-CSS CLEAR
+CSS RESET
 */
 
 /* http://meyerweb.com/eric/tools/css/reset/
@@ -137,6 +137,11 @@ button .search-input {
   margin: auto 10px;
 }
 
+.more-toggle {
+  font-size: .75em;
+  cursor: pointer;
+}
+
 .search-input {
   margin: 12px;
   min-width: 15%;
@@ -150,8 +155,12 @@ button .search-input {
   margin: auto 5px;
 }
 
-p {
+table {
   font-size: .75em;
   text-align: justify;
   padding: 3px 10px;
+}
+
+td {
+  padding: 3px;
 }
