@@ -39,7 +39,7 @@ const AddMovie = (props) => {
           Search
         </button>
       <button
-        className="add-btn"
+        className="btn add-btn"
         onClick={ e => {
           e.preventDefault();
           setAddMode(false);
@@ -58,7 +58,7 @@ const AddMovie = (props) => {
             {movie.title}
           </span>
           <button
-            className="watched-btn"
+            className="btn watched-btn"
             onClick={ e => {
               e.preventDefault();
               newMovie(movie);

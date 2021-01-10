@@ -53,7 +53,7 @@ const FilterBar = (props) => {
         />
       </label>
       <button
-        className="add-btn"
+        className="btn add-btn"
         onClick={ e => {
           e.preventDefault();
           setAddMode(true);

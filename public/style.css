@@ -59,7 +59,7 @@ body {
   background-color: dimgray;
   background-image: url('movie-theater.jpg');
   background-size: cover;
-  font: 1.2em Arial, sans-serif;
+  font: 1.2em 'Lato', sans-serif;
 }
 
 .app-component {
@@ -72,8 +72,21 @@ body {
   width: 50%;
   max-height: 80%;
   background-color: silver;
-  box-shadow: 4px 6px slategray;
+  box-shadow: 4px 6px 6px rgba(112, 128, 144, 0.75);
   border-radius: 10px;
+  animation: moveInBottom .75s ease-in-out 0s;
+  animation-fill-mode: backwards;
+}
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform:  translateX(-50%) translateY(10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }
 
 header {
@@ -81,9 +94,10 @@ header {
   padding: 5px;
   font-size: 1.8em;
   font-variant: small-caps;
+  letter-spacing: 1px;
   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   border: 2px solid gold;
-  box-shadow: 3px 5px dimgrey;
+  box-shadow: 3px 5px 5px rgba(105, 105, 105, 0.5);
   border-radius: 10px;
   text-align: center;
   color: #800000;
@@ -91,6 +105,10 @@ header {
 
 form {
   padding: 5px 25px;
+}
+
+.btn {
+  border-radius: 8px;
 }
 
 button .search-input {
@@ -110,14 +128,20 @@ button .search-input {
   margin: 12px 25px;
   background-color: rgba(255, 255, 255, .4);
   padding: 5px;
-  border-radius: 8px;
   overflow: auto;
+  box-shadow: 2px 4px 4px rgba(112, 128, 144, 0.25);
+  border-radius: 8px;
+}
+
+.year-span {
+  font-size: .25em;
 }
 
 .movie-poster {
   height: 60px;
   width: 40px;
   margin: auto 12px;
+  box-shadow: 2px 4px 4px rgba(112, 128, 144, 0.75);
 }
 
 .movie-title {

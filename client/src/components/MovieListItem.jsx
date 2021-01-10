@@ -12,9 +12,10 @@ const MovieListItem = (props) => {
       className="movie-list-item"
     >
       <img src={`${IMG_URL_PREFIX}${movie.poster_path}`} className="movie-poster" />
-      <span className="movie-title">{`${movie.title} (${movie.release_date.split('-')[0]})`}</span>
+      <span className="movie-title">{movie.title}</span>
+      <span className="year-span">{movie.release_date.split('-')[0]}</span>
       <button
-        className="watched-btn"
+        className="btn watched-btn"
         onClick={ e => {
           e.preventDefault();
           toggleWatched(movie);
@@ -23,9 +24,10 @@ const MovieListItem = (props) => {
         {movie.watched ? 'Watched' : 'Unwatched'}
       </button>
       { displayInfo ? <InfoCard movie={movie} className="info-card" /> : null }
-      <button className="watched-btn" onClick={ e => setDisplayInfo(!displayInfo) }>
+      <button className="btn watched-btn" onClick={ e => setDisplayInfo(!displayInfo) }>
         { displayInfo ? 'Close' : 'More...'}
       </button>
+      <i class="fas fa-trash">1</i>
     </div>
   )
 }
